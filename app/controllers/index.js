@@ -64,7 +64,7 @@ var stop = Titanium.UI.createButton({
 
 var beaconProximityCallback = function(e) {
 	    l1.setText("identifer: " + e.identifier);
-	    l2.setText("minor: " + e.minor);
+	    l2.setText("major: " + e.major + " minor: " + e.minor);
 	    l3.setText("proximity: " + e.proximity);
 	    l4.setText("accuracy: " + e.accuracy + " rssi: " + e.rssi + " power: " + e.power);
 };
@@ -76,6 +76,7 @@ var setup = function(){
     
     // stop ranging
     TiBeacons.stopRangingForAllBeacons();
+    TiBeacons.stopMonitoringAllRegions();
 };
 
 b1.addEventListener('click', function(e) {
@@ -116,6 +117,7 @@ b4.addEventListener('click', function(e) {
     TiBeacons.startRangingForBeacons({
       identifier: 'ranging for Estimote beacon 2',
       uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
+      major: -24,
       minor: 57920
     });
 });   
@@ -126,6 +128,7 @@ b5.addEventListener('click', function(e) {
     TiBeacons.startRangingForBeacons({
       identifier: 'ranging for Estimote beacon 3',
       uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
+      major: 14609,
       minor: 37863
     });
 });   
@@ -184,6 +187,7 @@ stop.addEventListener('click', function(e) {
 
     // stop everything
     TiBeacons.stopRangingForAllBeacons();
+    TiBeacons.stopMonitoringAllRegions();
     TiBeacons.removeEventListener("beaconProximity", beaconProximityCallback);
 
 
