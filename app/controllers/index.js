@@ -71,11 +71,12 @@ var beaconProximityCallback = function(e) {
 
 var setup = function(){
 	
-    // add the listeners for beacon region monitoring
+    // add the listener for beacon region monitoring
     TiBeacons.addEventListener("beaconProximity", beaconProximityCallback);
     
     // stop ranging
     TiBeacons.stopRangingForAllBeacons();
+    TiBeacons.stopRangingForBeacons();
     TiBeacons.stopMonitoringAllRegions();
 };
 
@@ -97,6 +98,7 @@ b1.addEventListener('click', function(e) {
     TiBeacons.startRangingForBeacons({
       identifier: 'ranging for GeLo beacon 2',
       uuid: '11e44f09-4ec4-407e-9203-cf57a50fbce0',
+      major: 0,
       minor: 1904
     });
 });
@@ -105,8 +107,9 @@ b1.addEventListener('click', function(e) {
     setup();
    // start ranging in the button click callback
     TiBeacons.startRangingForBeacons({
-      identifier: 'ranging for Estimote beacon 1',
+      identifier: 'ranging for Estimote purple',
       uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
+      major: 51352,
       minor: 27484
     });
 });   
@@ -115,9 +118,9 @@ b4.addEventListener('click', function(e) {
     setup();
    // start ranging in the button click callback
     TiBeacons.startRangingForBeacons({
-      identifier: 'ranging for Estimote beacon 2',
+      identifier: 'ranging for Estimote blue',
       uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
-      major: -24,
+      major: 40424,
       minor: 57920
     });
 });   
@@ -126,9 +129,9 @@ b5.addEventListener('click', function(e) {
     setup();
    // start ranging in the button click callback
     TiBeacons.startRangingForBeacons({
-      identifier: 'ranging for Estimote beacon 3',
+      identifier: 'ranging for Estimote green',
       uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
-      major: 14609,
+      major: 14608,
       minor: 37863
     });
 });   
@@ -137,8 +140,9 @@ b6.addEventListener('click', function(e) {
     setup();
    // start ranging in the button click callback
     TiBeacons.startRangingForBeacons({
-      identifier: 'ranging for Kontakt beacon 1',
+      identifier: 'ranging for Kontakt V69S',
       uuid: 'f7826da6-4fa2-4e98-8024-bc5b71e0893e',
+      major: 20318,
       minor: 41895
     });
 }); 
@@ -147,8 +151,9 @@ b7.addEventListener('click', function(e) {
     setup();
    // start ranging in the button click callback
     TiBeacons.startRangingForBeacons({
-      identifier: 'ranging for Kontakt beacon 2',
+      identifier: 'ranging for Kontakt Hf8r',
       uuid: 'f7826da6-4fa2-4e98-8024-bc5b71e0893e',
+      major: 12114,
       minor: 19526
     });
 }); 
@@ -157,8 +162,9 @@ b8.addEventListener('click', function(e) {
     setup();
    // start ranging in the button click callback
     TiBeacons.startRangingForBeacons({
-      identifier: 'ranging for Kontakt beacon 3',
+      identifier: 'ranging for Kontakt tDdN',
       uuid: 'f7826da6-4fa2-4e98-8024-bc5b71e0893e',
+      major: 35451,
       minor: 65158
     });
 }); 
@@ -167,8 +173,9 @@ b9.addEventListener('click', function(e) {
     setup();
    // start ranging in the button click callback
     TiBeacons.startRangingForBeacons({
-      identifier: 'ranging for Kontakt beacon 4',
+      identifier: 'ranging for Kontakt aVEf',
       uuid: 'f7826da6-4fa2-4e98-8024-bc5b71e0893e',
+      major: 10058,
       minor: 47732
     });
 }); 
@@ -177,8 +184,9 @@ b10.addEventListener('click', function(e) {
     setup();
    // start ranging in the button click callback
     TiBeacons.startRangingForBeacons({
-      identifier: 'ranging for Kontakt beacon 5',
+      identifier: 'ranging for Kontakt Hnj8',
       uuid: 'f7826da6-4fa2-4e98-8024-bc5b71e0893e',
+      major: 32949,
       minor: 34361
     });
 }); 
@@ -187,7 +195,7 @@ stop.addEventListener('click', function(e) {
 
     // stop everything
     TiBeacons.stopRangingForAllBeacons();
-    TiBeacons.stopMonitoringAllRegions();
+    TiBeacons.stopRangingForBeacons();
     TiBeacons.removeEventListener("beaconProximity", beaconProximityCallback);
 
 
