@@ -40,12 +40,10 @@
                     <string>location</string>
                     <string>bluetooth-central</string>
                 </array>
+                <key>NSLocationWhenInUseUsageDescription</key>
+                <string>NSLocationWhenInUseUsageDescription</string>
                 <key>NSLocationAlwaysUsageDescription</key>
-                <string>
-                    Specify the reason for accessing the user's location information.
-                    This appears in the alert dialog when asking the user for permission to
-                    access their location.
-                </string>
+                <string>Test NSLocationAlwaysUsageDescription</string>
             </dict>
         </plist>
     </ios>
