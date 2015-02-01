@@ -3,8 +3,15 @@
 // you can use checkAvailability() to see if it's supported, but
 // we don't do that here just because we're lazy.
 
-var TiBeacons = require('com.liferay.beacons');
+var TiBeacons = null;
 
+if (Ti.Platform.name == "android") {
+	TiBeacons = require('com.liferay.beacons');
+} else if (Ti.Platform.name == "iPhone OS") {
+	TiBeacons = require('org.beuckman.tibeacons');
+} else {
+	console.log("beacons not supported on " + Ti.Platform.name);
+}
 // make a window with buttons to start and stop monitoring
 var window = Titanium.UI.createWindow({
     title:'iBeacon Test',
